@@ -1,0 +1,286 @@
+/* register.scss */
+.register-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: 121px;
+    margin-bottom: 66px;
+
+    .register-tittle {
+        color: rgb(16, 16, 16);
+        margin: 0px;
+        text-align: center;
+        font-family: sonny-cond, "Arial Black", sans-serif;
+        font-weight: 600;
+    }
+
+    .register-form-container {
+        width: 450px;
+        border-radius: 12px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 16px, rgba(0, 0, 0, 0.1) 0px 0px 4px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        display: inline-flex;
+        padding: 35px;
+        border-radius: 20px;
+
+        .register-form {
+            width: 450px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+
+            .name-input-group {
+                width: 404px;
+                height: 32px;
+                position: relative;
+                border-bottom: 2px solid;
+                margin: auto;
+
+                .name-input {
+                    width: 367px;
+                    height: 29px;
+                    position: relative;
+                    left: 29px;
+                    font-size: 20px;
+                    color: rgb(0, 0, 0);
+                    outline: none;
+                    border: none;
+                }
+
+                .input-icons {
+                    width: 25px;
+                    height: 20px;
+                    position: absolute;
+
+                    .icon-user {
+                        height: 29px;
+                        color: rgb(0, 0, 0);
+                    }
+                }
+            }
+
+            .email-input-group {
+                width: 404px;
+                height: 32px;
+                position: relative;
+                border-bottom: 2px solid;
+                margin: auto;
+
+                .email-input {
+                    width: 367px;
+                    height: 29px;
+                    position: relative;
+                    left: 29px;
+                    font-size: 20px;
+                    color: rgb(0, 0, 0);
+                    outline: none;
+                    border: none;
+                }
+
+                .input-icons {
+                    width: 25px;
+                    height: 20px;
+                    position: absolute;
+
+                    .icon-user {
+                        height: 29px;
+                        color: rgb(0, 0, 0);
+                    }
+                }
+
+                .email-label {
+                    width: 100px;
+                    position: absolute;
+                    left: 36px;
+                    top: 5px;
+                    font-size: 17px;
+                    font-family: "Red Hat Display";
+                    font-weight: 700;
+                }
+            }
+
+            .password-input-group {
+                width: 404px;
+                height: 32px;
+                position: relative;
+                border-bottom: 2px solid;
+                margin: auto;
+
+                .password-input {
+                    width: 367px;
+                    top: -2px;
+                    height: 29px;
+                    position: absolute;
+                    left: 29px;
+                    font-size: 20px;
+                    color: rgb(0, 0, 0);
+                    outline: none;
+                    border: none;
+                }
+
+                .eye-icon-container {
+                    position: relative;
+                    cursor: pointer;
+                    justify-self: end;
+                    left: -5px;
+                    top: 1px;
+                    width: 40px;
+                    background-color: white;
+                    height: 29px;
+
+                    .eye-icon {
+                        justify-self: center;
+                        display: flex;
+                    }
+                }
+
+                .input-icons {
+                    width: 25px;
+                    height: 20px;
+                    position: absolute;
+
+                    .icon-password {
+                        height: 29px;
+                        color: rgb(0, 0, 0);
+                    }
+                }
+
+                .password-label {
+                    width: 100px;
+                    position: absolute;
+                    left: 36px;
+                    top: 5px;
+                    color: #ffffff;
+                    font-size: 17px;
+                    font-family: "Red Hat Display";
+                    font-weight: 700;
+                }
+            }
+
+            .form-ask {
+                width: 404px;
+                position: relative;
+                margin: auto;
+                display: flex;
+
+                .checkbox {
+                    position: relative;
+                    top: 1px;
+                }
+
+                .flex-gap {
+                    display: flex;
+                    gap: 186px;
+                    position: relative;
+                    left: 3px;
+                }
+
+                .remember-me,
+                .forgot-password {
+                    // font-size: 12px;
+                    // font-family: 'Poppins';
+                    // font-weight: 500;
+                    // word-wrap: break-word;
+                    // font-size: 17px;
+                    // position: relative;
+                    // top: 24px;
+                    // position: relative;
+                    color: rgb(0, 119, 133);
+                }
+
+                .separator-line {}
+            }
+
+            .account-link {
+                font-family: "Poppins";
+                font-weight: 500;
+                text-align: center;
+                gap: 7px;
+                display: flex;
+                justify-content: center;
+
+                span {
+                    font-size: 15px;
+                }
+
+                .sign-in-link {
+                    color: rgb(0, 119, 133);
+                    margin-left: 10px;
+                    cursor: pointer;
+                }
+            }
+
+            .register-button {
+                width: 437px;
+                height: 35px;
+                border-radius: 5px;
+                border: 1px solid;
+                color: white;
+                background-color: rgb(0, 119, 133);
+                font-size: 19px;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: auto;
+            }
+
+            .social-register {
+                width: 450px;
+                height: 25px;
+                justify-content: center;
+                /* justify-self: center; */
+                display: flex;
+
+                .social-register-text {
+                    width: 100px;
+                    text-align: center;
+                    color: #000;
+                    font-size: 15px;
+                    font-family: 'Poppins';
+                    font-weight: 500;
+                }
+
+                .separator {
+                    height: 0;
+                }
+            }
+
+            .google-register-button {
+                width: 437px;
+                height: 35px;
+                left: 6.06px;
+                top: 461px;
+                justify-content: center;
+                display: flex;
+                border: solid 1px;
+                border-radius: 6px;
+                margin: auto;
+
+                .google-register-background {
+                    width: 437px;
+                    height: 35px;
+                    border-radius: 5px;
+                    border: 1px solid;
+                }
+
+                .google-register-icons {
+                    width: 20px;
+                    top: 6px;
+                    display: flex;
+                    align-items: center;
+
+                    .google-icon {
+                        width: 12px;
+                        height: 12px;
+                    }
+                }
+            }
+        }
+    }
+}

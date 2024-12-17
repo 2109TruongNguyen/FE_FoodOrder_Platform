@@ -19,100 +19,111 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import { Badge, Button } from "@mui/material";
 import { FONT_MAIN, PRIMARY_COLOR } from "../config/Constant";
-
 import { users } from "../test/Datatest";
 const settings = ["Quản lý tài khoản", "Món ăn đã mua", "Đăng Xuất"];
 const Search = styled('div')(({ theme }) => ({
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: alpha(theme.palette.common.white, 0.25),
-    },
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
+  position: 'relative',
+  borderRadius: theme.shape.borderRadius,
+  backgroundColor: alpha(theme.palette.common.white, 0.15),
+  '&:hover': {
+    backgroundColor: alpha(theme.palette.common.white, 0.25),
+  },
+  marginRight: theme.spacing(2),
+  marginLeft: 0,
+  width: '100%',
+  [theme.breakpoints.up('sm')]: {
+    marginLeft: theme.spacing(3),
+    width: 'auto',
+  },
+}));
+const SearchIconWrapper = styled('div')(({ theme }) => ({
+  padding: theme.spacing(0, 2),
+  height: '100%',
+  position: 'absolute',
+  pointerEvents: 'none',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+}));
+
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
+  color: 'inherit',
+  width: '100%',
+  '& .MuiInputBase-input': {
+    padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
+    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+    transition: theme.transitions.create('width'),
     width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
-      width: 'auto',
-    },
-  }));
-  const SearchIconWrapper = styled('div')(({ theme }) => ({
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }));
-  
-  const StyledInputBase = styled(InputBase)(({ theme }) => ({
-    color: 'inherit',
-    width: '100%',
-    '& .MuiInputBase-input': {
-      padding: theme.spacing(1, 1, 1, 0),
-      // vertical padding + font size from searchIcon
-      paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-      transition: theme.transitions.create('width'),
+    [theme.breakpoints.up('md')]: {
       width: '100%',
-      [theme.breakpoints.up('md')]: {
-        width: '100%',
-  
-      },
+
     },
-  }));
+  },
+}));
 export default function Header() {
-    const [search, setSearch] = React.useState("Nhập tên món ăn cần tìm");
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
-    const [user, setUser] = React.useState(null);
-    const navigate = useNavigate();
-    
-    React.useEffect(() => {
-        setUser(users[0]);
-    }, []);
+  const [search, setSearch] = React.useState("Nhập tên món ăn cần tìm");
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [user, setUser] = React.useState(null);
+  const navigate = useNavigate();
 
-    const handleOpenUserMenu = (event) => {
-        setAnchorElUser(event.currentTarget);
-      };
-    
-      const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
-      };
+  React.useEffect(() => {
+    setUser(users[0]);
+  }, []);
 
-      const handleEventUser = (e) => {
-        if (e === 'Đăng Xuất') {
-          // localStorage.removeItem(USER_ID_KEY);
-          // navigate(LOGIN_PAGE);
-        //   logoutUser();
-          return;
-        }
-        if (e === 'Vé Đã Mua') {
-        //   navigate(BOUGHT_TICKET_MANEMENT_PAGE);
-          return;
-        }
-        if (e === 'Quản lý tài khoản')
-        //   navigate(PROFILE_PAGE)
-        return;
-      };
-    const handleSearchInput = (e) => {
-        setSearch(e.target.value);
-      }
-    
-      const handleSearchKeyDown = (eventName) => {
-        if (eventName.key === 'Enter') {
-        //   navigate(SEARCH_PAGE, { state: { eventName: eventName.target.value } })
-        }
-      }
-      
+  const handleNavigation = (type) => {
+    switch (type) {
+      case "homepage":
+        navigate('/');
+        break;
+      default:
+        console.error('Unknown navigation type');
+    }
+  }
+
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
+
+  const handleEventUser = (e) => {
+    if (e === 'Đăng Xuất') {
+      // localStorage.removeItem(USER_ID_KEY);
+      // navigate(LOGIN_PAGE);
+      //   logoutUser();
+      setUser(null);
+      return;
+    }
+    if (e === 'Vé Đã Mua') {
+      //   navigate(BOUGHT_TICKET_MANEMENT_PAGE);
+      return;
+    }
+    if (e === 'Quản lý tài khoản')
+      //   navigate(PROFILE_PAGE)
+      return;
+  };
+  const handleSearchInput = (e) => {
+    setSearch(e.target.value);
+  }
+
+  const handleSearchKeyDown = (eventName) => {
+    if (eventName.key === 'Enter') {
+      //   navigate(SEARCH_PAGE, { state: { eventName: eventName.target.value } })
+    }
+  }
+
   return (
     <AppBar style={{ backgroundColor: PRIMARY_COLOR }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* <LocalActivityIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
-          <img  src="..\..\src\assets\logo\logo.png" style={{ maxHeight: '40px', cursor: 'pointer' }} />
+          <img onClick={() => handleNavigation('homepage')} src="..\..\src\assets\logo\logo.png" style={{ maxHeight: '40px', cursor: 'pointer' }} />
           <Typography
             variant="h6"
+            onClick={() => handleNavigation('homepage')}
             noWrap
             component="a"
             sx={{
@@ -126,13 +137,14 @@ export default function Header() {
               marginLeft: '1%',
               cursor: 'pointer'
             }}
-            // onClick={handleHomepage}
+          // onClick={handleHomepage}
           >
             VietNamese Food
           </Typography>
 
 
           <Typography
+            onClick={() => handleNavigation('homepage')}
             variant="h5"
             noWrap
             component="a"
@@ -156,7 +168,7 @@ export default function Header() {
                 <SearchIcon />
               </SearchIconWrapper>
               <StyledInputBase
-                style={{ backgroundColor:'rgba(213, 213, 213, 0)', color:'white' }}
+                style={{ backgroundColor: 'rgba(213, 213, 213, 0)', color: 'white' }}
                 name="search_field"
                 placeholder={search}
                 inputProps={{ 'aria-label': 'search' }}
