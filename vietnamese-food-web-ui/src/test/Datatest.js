@@ -51,4 +51,76 @@ export const users = [
     }
 ];
 
-export default users;
+export const foods = 
+[
+    {
+        id: 1,
+        name: "Pho",
+        description: "Traditional Vietnamese noodle soup",
+        price: "$10",
+        image: "pho.jpg",
+    },
+    {
+        id: 2,
+        name: "Banh Mi",
+        description: "Vietnamese sandwich",
+        price: "$5",
+        image: "banhmi.jpg",
+    },
+    {
+        id: 3,
+        name: "Spring Rolls",
+        description: "Fresh spring rolls with shrimp and vegetables",
+        price: "$7",
+        image: "springrolls.jpg",
+    },
+    {
+        id: 4,
+        name: "Bun Cha",
+        description: "Grilled pork with noodles",
+        price: "$8",
+        image: "buncha.jpg",
+    },
+    {
+        id: 5,
+        name: "Goi Cuon",
+        description: "Vietnamese fresh spring rolls",
+        price: "$6",
+        image: "goicuon.jpg",
+    },
+    {
+        id: 6,
+        name: "Com Tam",
+        description: "Broken rice with grilled pork",
+        price: "$9",
+        image: "comtam.jpg",
+    },
+    {
+        id: 7,
+        name: "Banh Xeo",
+        description: "Vietnamese savory crepe",
+        price: "$7",
+        image: "banhxeo.jpg",
+    },
+    {
+        id: 8,
+        name: "Ca Kho To",
+        description: "Caramelized fish in clay pot",
+        price: "$12",
+        image: "cakhoto.jpg",
+    },
+    {
+        id: 9,
+        name: "Bun Bo Hue",
+        description: "Spicy beef noodle soup",
+        price: "$11",
+        image: "bunbohue.jpg",
+    },
+    {
+        id: 10,
+        name: "Cha Gio",
+        description: "Vietnamese fried spring rolls",
+        price: "$6",
+        image: "chagio.jpg",
+    }
+];
