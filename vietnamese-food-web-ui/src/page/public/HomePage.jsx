@@ -8,10 +8,11 @@ import {
   MDBPaginationItem,
   MDBPaginationLink,
 } from "mdb-react-ui-kit";
+import { useNavigate } from "react-router-dom";
 const HomePage = () => {
   const [currentPage, setCurrentPage] = useState(1); // Initial page is 1
   const itemsPerPage = 6; // Number of items per page
-
+  const navigate = useNavigate();
   // Calculate the index range of items to display based on the current page
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -57,7 +58,7 @@ const HomePage = () => {
                   <Card.Text>
                     <strong>{food.price} VND</strong>
                   </Card.Text>
-                  <Button variant="primary">Order Now</Button>
+                  <Button variant="primary" onClick={() => navigate(`/detail/${food.id}`)}>Order Now</Button>
                 </Card.Body>
               </Card>
             </Col>

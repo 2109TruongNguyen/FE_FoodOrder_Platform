@@ -5,10 +5,9 @@ import { useNavigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { FaGoogle } from "react-icons/fa6";
 import { IoMail } from "react-icons/io5";
-import Header from "./Header";
-import Footer from "./Footer";
-import './Register.scss';
-
+import '../../assets/CSS/Register.scss';
+import Header from "../../components/Header"
+import Footer from "../../components/Footer"
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);

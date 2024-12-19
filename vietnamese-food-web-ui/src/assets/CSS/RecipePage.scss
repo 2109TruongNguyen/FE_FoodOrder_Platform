@@ -1,0 +1,22 @@
+.custom-card {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.price-and-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.detail-container {
+    margin-top: 115px;
+    margin-bottom: 15px
+}

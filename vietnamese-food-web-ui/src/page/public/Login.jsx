@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './Login.scss';
+import '../../assets/CSS/Login.scss';
 import { useNavigate } from 'react-router-dom';
 import { RiLockPasswordFill } from "react-icons/ri";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
@@ -7,9 +7,9 @@ import { MdCheckBoxOutlineBlank } from "react-icons/md";
 import { IoMail } from "react-icons/io5";
 import { IoMdCheckbox } from "react-icons/io";
 import { FaGoogle } from "react-icons/fa6";
-import Header from "./Header";
-import Footer from "./Footer";
-
+import Header from "../../components/Header"
+import Footer from "../../components/Footer"
+import vietnameseFood from "../../assets/image/vietnamesefood.png"
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [isChecked, setIsChecked] = useState(false);
@@ -29,6 +29,9 @@ const Login = () => {
             case "register":
                 navigate('/register');
                 break;
+            case "homepage":
+                navigate('/');
+                break;
             default:
                 console.error('Unknown navigation type');
         }
@@ -36,6 +39,8 @@ const Login = () => {
     return (
         <>
             <div className="login-container">
+                <img className="auth-image" src={vietnameseFood} />
+                <button className="image-button" onClick={() => handleNavigation('homepage')}>Return</button>
                 <div className="login-form-container">
                     <div className="login-form">
                         <div className="login-tittle">Sign in to FOODKING</div>
