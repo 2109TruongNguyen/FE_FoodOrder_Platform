@@ -4,14 +4,19 @@ import { FaUser } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { FaGoogle } from "react-icons/fa6";
+import { toast } from 'react-toastify';
 import { IoMail } from "react-icons/io5";
+import { users } from "../../test/Datatest";
 import '../../assets/CSS/Register.scss';
-import Header from "../../components/Header"
-import Footer from "../../components/Footer"
+
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const navigate = useNavigate();
 
     const togglePasswordVisibility = (type) => {
         if (type === 'password') {
@@ -21,7 +26,48 @@ const Register = () => {
         }
     };
 
-    const navigate = useNavigate();
+    const validateEmail = (email) => {
+        return String(email)
+            .toLowerCase()
+            .match(
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            );
+    };
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            handleRegister();
+        }
+    };
+    const handleRegister = async () => {
+        if (!name || !email || !password || !confirmPassword) {
+            toast.error("Please fill in all fields.");
+            return;
+        }
+        const existingUser = users.find(user => user.email === email);
+        if (existingUser) {
+            toast.error("This email is already registered.");
+            return;
+        }
+
+        if (!validateEmail(email)) {
+            toast.error('Please enter a valid email address.');
+            return;
+        }
+
+        if (!password) {
+            toast.error('Password cannot be empty.');
+            return;
+        }
+        if (password !== confirmPassword) {
+            toast.error("Passwords do not match.");
+            return;
+        }
+
+        toast.success("Registration successful!");
+        navigate('/login');
+
+    };
+
     const handleNavigation = (type) => {
         switch (type) {
             case "login":
@@ -31,6 +77,7 @@ const Register = () => {
                 console.error('Unknown navigation type');
         }
     }
+
     return (
         <>
             <div className="register-container">
@@ -46,6 +93,9 @@ const Register = () => {
                                 type="text"
                                 className="name-input"
                                 placeholder="Enter your name"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                onKeyDown={(event) => handleKeyDown(event)}
                             />
                         </div>
 
@@ -57,6 +107,9 @@ const Register = () => {
                                 type="email"
                                 className="email-input"
                                 placeholder="Enter your email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                onKeyDown={(event) => handleKeyDown(event)}
                             />
                         </div>
 
@@ -69,6 +122,9 @@ const Register = () => {
                                 type={showPassword ? "text" : "password"}
                                 className="password-input"
                                 placeholder="Enter your password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                onKeyDown={(event) => handleKeyDown(event)}
                             />
                             <div
                                 className="eye-icon-container"
@@ -91,6 +147,9 @@ const Register = () => {
                                 type={showConfirmPassword ? "text" : "password"}
                                 className="password-input"
                                 placeholder="Enter your confirm password"
+                                value={confirmPassword}
+                                onChange={(e) => setConfirmPassword(e.target.value)}
+                                onKeyDown={(event) => handleKeyDown(event)}
                             />
                             <div
                                 className="eye-icon-container"
@@ -108,7 +167,12 @@ const Register = () => {
                             <span>Already have an account?</span>
                             <span className='sign-in-link' onClick={() => handleNavigation('login')}>Sign In</span>
                         </div>
-                        <div className="register-button">Sign up</div>
+                        <button
+                            className="register-button"
+                            onClick={handleRegister}
+                        >
+                            Sign up
+                        </button>
 
                         <div className="social-register">
                             <span className="separator left">-----------------</span>

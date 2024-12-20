@@ -3,6 +3,7 @@ export const users = [
         id: 1,
         name: 'Nguyen Van A',
         email: 'nguyenvana@example.com',
+        password: '123',
         age: 28,
         address: '123 Le Loi, Ho Chi Minh City',
         avatar: 'https://example.com/avatars/nguyenvana.jpg',

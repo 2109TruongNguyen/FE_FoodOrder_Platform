@@ -4,6 +4,7 @@ import HomePage from "./page/public/HomePage";
 import Login from "./page/public/Login"
 import Register from "./page/public/Register"
 import DetailPage from "./page/public/DetailFood";
+import { toast, ToastContainer } from 'react-toastify';
 import { DEFAULT_PAGE, LOGIN_PAGE, REGISTER_PAGE, DETAIL_PAGE } from './config/Constant';
 function App() {
   return (
@@ -15,7 +16,9 @@ function App() {
           <Route path={REGISTER_PAGE} element={<Register />} />
           <Route path={DETAIL_PAGE} element={<DetailPage />} />
         </Routes>
+
       </BrowserRouter>
+      <ToastContainer />
     </>
   )
 }
