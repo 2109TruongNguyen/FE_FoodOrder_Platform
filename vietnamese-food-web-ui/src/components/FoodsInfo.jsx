@@ -47,8 +47,8 @@ const FoodsInfo = ({ food }) => {
                 </Card>
 
 
-                <Card className="food-card">
-                    <CardContent>
+                <Card className="food-card"  >
+                    <CardContent style={{cursor: "pointer"}}>
                         <ShowMoreText
                             lines={3}
                             more="Show more"
@@ -70,12 +70,13 @@ const FoodsInfo = ({ food }) => {
                             less="Show less"
                             className="content-css"
                             anchorClass="my-anchor-css-class"
-                            expanded={false} >
+                            expanded={false} 
+                            style={{ cursor: "pointer" }}>
                             {food.WayCooking.map((step, index) => (
                                 <Typography variant="body3" key={index}>
                                     {step}
                                 </Typography>
-                            ))}
+                            ))}                          
                         </ShowMoreText>
                     </CardContent>
                 </Card>

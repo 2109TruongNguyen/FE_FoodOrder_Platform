@@ -1,7 +1,8 @@
 export const users = [
     {
         id: 1,
-        name: 'Nguyen Van A',
+        lastname: 'A',
+        firstname: 'Nguyen Van',
         email: 'nguyenvana@example.com',
         password: '123',
         age: 28,
@@ -22,7 +23,8 @@ export const users = [
     },
     {
         id: 3,
-        name: 'Le Van C',
+        lastname: 'C',
+        firstname: 'Nguyen Van',
         email: 'levanc@example.com',
         age: 24,
         address: '789 Hai Ba Trung, Da Nang',

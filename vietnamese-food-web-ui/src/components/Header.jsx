@@ -18,7 +18,7 @@ import LocalActivityIcon from '@mui/icons-material/LocalActivity';
 import LogoutIcon from '@mui/icons-material/Logout';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import { Badge, Button } from "@mui/material";
-import { FONT_MAIN, PRIMARY_COLOR } from "../config/Constant";
+import { FONT_MAIN, PRIMARY_COLOR, PROFILE_PAGE } from "../config/Constant";
 import { users } from "../test/Datatest";
 const settings = ["Quản lý tài khoản", "Món ăn đã mua", "Đăng Xuất"];
 const Search = styled('div')(({ theme }) => ({
@@ -68,7 +68,7 @@ export default function Header() {
   const navigate = useNavigate();
 
   React.useEffect(() => {
-    setUser(users[0]);
+    setUser(users[2]);
   }, []);
 
   const handleNavigation = (type) => {
@@ -102,7 +102,7 @@ export default function Header() {
       return;
     }
     if (e === 'Quản lý tài khoản')
-      //   navigate(PROFILE_PAGE)
+        navigate(PROFILE_PAGE)
       return;
   };
   const handleSearchInput = (e) => {
