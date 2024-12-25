@@ -300,3 +300,41 @@ export const recipe = [
     { R_ID: 43, F_ID: 10, Ingredient_ID: 19, Quantity: 50, Measurement: "grams" }, // Vermicelli Noodles for Cha Gio
 ];
 
+export const weeklyMenus = [
+    { W_ID: 1, Name: "Week 1", StartDate: "2024-12-01", EndDate: "2024-12-07" },
+    { W_ID: 2, Name: "Week 2", StartDate: "2024-12-08", EndDate: "2024-12-14" },
+    { W_ID: 3, Name: "Week 3", StartDate: "2024-12-15", EndDate: "2024-12-21" },
+    { W_ID: 4, Name: "Week 4", StartDate: "2024-12-22", EndDate: "2024-12-28" },
+    { W_ID: 5, Name: "Week 1", StartDate: "2024-12-29", EndDate: "2025-01-04" },
+    { W_ID: 6, Name: "Week 2", StartDate: "2025-01-05", EndDate: "2025-01-11" },
+    { W_ID: 7, Name: "Week 3", StartDate: "2025-01-12", EndDate: "2025-01-18" },
+    { W_ID: 8, Name: "Week 4", StartDate: "2025-01-19", EndDate: "2025-01-25" },
+    { W_ID: 9, Name: "Week 1", StartDate: "2025-01-26", EndDate: "2025-02-01" },
+    { W_ID: 10, Name: "Week 2", StartDate: "2025-02-02", EndDate: "2025-02-08" }
+];
+
+export const weekItems = [
+    { WI_ID: 1, W_ID: 1, F_ID: 1 },  // Pho in Week 1
+    { WI_ID: 2, W_ID: 1, F_ID: 2 },  // Banh Mi in Week 1
+    { WI_ID: 3, W_ID: 1, F_ID: 3 },  // Spring Rolls in Week 1
+    { WI_ID: 1, W_ID: 1, F_ID: 8 },  // Pho in Week 1
+    { WI_ID: 2, W_ID: 1, F_ID: 9 },  // Banh Mi in Week 1
+    { WI_ID: 3, W_ID: 1, F_ID: 10 },  // Spring Rolls in Week 1
+    { WI_ID: 4, W_ID: 2, F_ID: 4 },  // Bun Cha in Week 2
+    { WI_ID: 5, W_ID: 2, F_ID: 5 },  // Goi Cuon in Week 2
+    { WI_ID: 6, W_ID: 2, F_ID: 6 },  // Com Tam in Week 2
+    { WI_ID: 7, W_ID: 3, F_ID: 7 },  // Banh Xeo in Week 3
+    { WI_ID: 8, W_ID: 3, F_ID: 8 },  // Ca Kho To in Week 3
+    { WI_ID: 9, W_ID: 3, F_ID: 9 },  // Bun Bo Hue in Week 3
+    { WI_ID: 10, W_ID: 4, F_ID: 10 }, // Cha Gio in Week 4
+    { WI_ID: 11, W_ID: 4, F_ID: 1 },  // Pho in Week 4
+    { WI_ID: 12, W_ID: 4, F_ID: 3 },  // Spring Rolls in Week 4
+    { WI_ID: 13, W_ID: 5, F_ID: 2 },  // Banh Mi in Week 5
+    { WI_ID: 14, W_ID: 5, F_ID: 5 },  // Goi Cuon in Week 5
+    { WI_ID: 15, W_ID: 5, F_ID: 8 },  // Ca Kho To in Week 5
+    { WI_ID: 16, W_ID: 6, F_ID: 4 },  // Bun Cha in Week 6
+    { WI_ID: 17, W_ID: 6, F_ID: 6 },  // Com Tam in Week 6
+    { WI_ID: 18, W_ID: 6, F_ID: 9 },  // Bun Bo Hue in Week 6
+    { WI_ID: 19, W_ID: 7, F_ID: 7 },  // Banh Xeo in Week 7
+    { WI_ID: 20, W_ID: 7, F_ID: 10 }  // Cha Gio in Week 7
+];
