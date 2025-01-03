@@ -1,8 +1,7 @@
 export const users = [
     {
         id: 1,
-        lastname: 'A',
-        firstname: 'Nguyen Van',
+        name: 'Nguyen Van A',
         email: 'nguyenvana@example.com',
         password: '123',
         age: 28,
@@ -23,8 +22,7 @@ export const users = [
     },
     {
         id: 3,
-        lastname: 'C',
-        firstname: 'Nguyen Van',
+        name: 'Pham Thi C',
         email: 'levanc@example.com',
         age: 24,
         address: '789 Hai Ba Trung, Da Nang',
@@ -59,7 +57,7 @@ export const foods = [
         id: 1,
         name: "Pho",
         description: "Traditional Vietnamese noodle soup",
-        price: "$10",
+        price: 10, // Changed from string to number
         image: "pho.jpg",
         Category_ID: 1,
         Origin: "Vietnam",
@@ -76,7 +74,7 @@ export const foods = [
         id: 2,
         name: "Banh Mi",
         description: "Vietnamese sandwich",
-        price: "$5",
+        price: 5, // Changed from string to number
         image: "banhmi.jpg",
         Category_ID: 2,
         Origin: "Vietnam",
@@ -92,7 +90,7 @@ export const foods = [
         id: 3,
         name: "Spring Rolls",
         description: "Fresh spring rolls with shrimp and vegetables",
-        price: "$7",
+        price: 7, // Changed from string to number
         image: "springrolls.jpg",
         Category_ID: 3,
         Origin: "Vietnam",
@@ -107,7 +105,7 @@ export const foods = [
         id: 4,
         name: "Bun Cha",
         description: "Grilled pork with noodles",
-        price: "$8",
+        price: 8, // Changed from string to number
         image: "buncha.jpg",
         Category_ID: 4,
         Origin: "Vietnam",
@@ -122,7 +120,7 @@ export const foods = [
         id: 5,
         name: "Goi Cuon",
         description: "Vietnamese fresh spring rolls",
-        price: "$6",
+        price: 6, // Changed from string to number
         image: "goicuon.jpg",
         Category_ID: 5,
         Origin: "Vietnam",
@@ -137,7 +135,7 @@ export const foods = [
         id: 6,
         name: "Com Tam",
         description: "Broken rice with grilled pork",
-        price: "$9",
+        price: 9, // Changed from string to number
         image: "comtam.jpg",
         Category_ID: 6,
         Origin: "Vietnam",
@@ -152,7 +150,7 @@ export const foods = [
         id: 7,
         name: "Banh Xeo",
         description: "Vietnamese savory crepe",
-        price: "$7",
+        price: 7, // Changed from string to number
         image: "banhxeo.jpg",
         Category_ID: 7,
         Origin: "Vietnam",
@@ -168,7 +166,7 @@ export const foods = [
         id: 8,
         name: "Ca Kho To",
         description: "Caramelized fish in clay pot",
-        price: "$12",
+        price: 12, // Changed from string to number
         image: "cakhoto.jpg",
         Category_ID: 8,
         Origin: "Vietnam",
@@ -183,7 +181,7 @@ export const foods = [
         id: 9,
         name: "Bun Bo Hue",
         description: "Spicy beef noodle soup",
-        price: "$11",
+        price: 11, // Changed from string to number
         image: "bunbohue.jpg",
         Category_ID: 9,
         Origin: "Vietnam",
@@ -200,7 +198,7 @@ export const foods = [
         id: 10,
         name: "Cha Gio",
         description: "Vietnamese fried spring rolls",
-        price: "$6",
+        price: 6, // Changed from string to number
         image: "chagio.jpg",
         Category_ID: 10,
         Origin: "Vietnam",
@@ -213,6 +211,7 @@ export const foods = [
         ]
     }
 ];
+
 
 export const ingredients = [
     { Ingredient_ID: 1, Name: "Beef", IsAvailable: true, Measurement: "grams" },

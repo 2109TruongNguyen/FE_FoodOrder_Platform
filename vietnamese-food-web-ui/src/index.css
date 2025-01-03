@@ -1,0 +1,5 @@
+/* Ẩn thanh cuộn cho các trình duyệt Webkit (Chrome, Safari, Opera) */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  

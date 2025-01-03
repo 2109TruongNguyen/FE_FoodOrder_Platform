@@ -4,7 +4,8 @@ export const LOGIN_PAGE = "/login";
 export const REGISTER_PAGE = "/register";
 export const DETAIL_PAGE = "/detail/:id";
 export const PROFILE_PAGE = "/profile";
-
+export const CART_PAGE = "/order"
+export const PAYMENT_PAGE = "/payment"
 
 // Side bar options
 export const SidebarOption = {
